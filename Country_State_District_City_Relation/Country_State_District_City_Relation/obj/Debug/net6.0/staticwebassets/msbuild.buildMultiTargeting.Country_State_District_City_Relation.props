@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Country_State_District_City_Relation.props" />
+</Project>

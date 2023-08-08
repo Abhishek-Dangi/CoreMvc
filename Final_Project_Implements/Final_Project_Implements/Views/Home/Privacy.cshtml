@@ -1,0 +1,16 @@
+﻿@*@model Final_Project_Implements.Models.HomeMv;*@
+@using Final_Project_Implements.Models;
+@model HomeMv
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+@foreach(var item in Model.TopPost)
+{
+        <p>@item.Title</p>
+        <img src="@item.ImageUrl" height="200px" />
+}

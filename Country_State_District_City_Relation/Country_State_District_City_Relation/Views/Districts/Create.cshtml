@@ -1,0 +1,80 @@
+﻿@model Country_State_District_City_Relation.Models.District
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>District</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryId" class="control-label"></label>
+                <select asp-for="CountryId" class="form-control" asp-items="ViewBag.CountryId">
+                    <option value="">--select--</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateId" class="control-label"></label>
+                <select asp-for="StateId" class ="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisplayOrder" class="control-label"></label>
+                <input asp-for="DisplayOrder" class="form-control" />
+                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+        $.ajax({
+            url: '/Cities/getAllCountry',
+            success: function (result) { }
+        });
+        $('#CountryId').change(function () {
+            var Id = $(this).val();
+            $('#StateId').empty();
+            $('#StateId').append('<Option>----Select SubCateory---</Option>');
+            $.ajax({
+                url: '/Cities/getStateByCountry?Id=' + Id,
+                success: function (result) {
+                    $.each(result, function (i, data) {
+                        $('#StateId').append('<Option value=' + data.CountryId + '>' + data.Title + '</Option>');
+                    });
+                }
+
+            });
+        });
+        
+    </script>
+}

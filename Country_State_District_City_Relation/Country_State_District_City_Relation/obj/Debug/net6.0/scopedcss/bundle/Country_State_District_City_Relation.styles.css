@@ -1,0 +1,49 @@
+/* _content/Country_State_District_City_Relation/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-qidkjzhpla] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-qidkjzhpla] {
+  color: #0077cc;
+}
+
+.btn-primary[b-qidkjzhpla] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-qidkjzhpla], .nav-pills .show > .nav-link[b-qidkjzhpla] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-qidkjzhpla] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-qidkjzhpla] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-qidkjzhpla] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-qidkjzhpla] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-qidkjzhpla] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

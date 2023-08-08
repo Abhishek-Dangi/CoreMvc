@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MyPrecticesCatSabcat.Models.Category>
+
+
+<h1>This is Test  </h1>
+<script language="javascript" type="text/javascript">
+    var months = ["जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितम्बर", "अक्टूबर", "नवम्बर", "दिसम्बर"];
+    var days = ["१", "२", "३", "४", "५", "६", "७", "८", "९", "१०", "११", "१२", "१३", "१४", "१५", "१६", "१७", "१८", "१९", "२०", "२१", "२२", "२३", "२४", "२५", "२६", "२७", "२८", "२९", "३०", "३१"];
+    var MyDays = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
+    var d = new Date();
+    document.write(MyDays[d.getDay()] + ", ");
+    document.write(d.getDate() + " ");
+    document.write(months[d.getMonth()] + " ");
+    var year = d.getFullYear();
+    document.write(year);
+</script>
+
+
+@foreach (var item in Model)
+{
+    <p>@item.Title</p>   
+}

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Final_Project_Implements.Models.Category>
+
+<div>
+<h1>This is view component for testing.</h1>
+
+@foreach(var item in Model)
+{
+
+    <p>category Id: @item.Id </p>
+    <p>category Title: @item.Title</p>
+    
+}
+
+</div>
